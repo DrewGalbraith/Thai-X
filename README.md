@@ -8,7 +8,7 @@ There are 2 principle steps taking place here:
 - Recursive desent parsing.
 
 ## Part-of-speech tagging
-This tool uses python library to do the part-of-speech tagging for Thai.
+This tool uses the [pythainlp.tag](https://pythainlp.github.io/dev-docs/api/tag.html) library for part-of-speech tagging.
 
 ## Recursive Descent Parsing
 We use NLTK to build a Thai parser that operates on the principles of XBar theory. The first step is to create a context-free grammar (CFG). This will depend on the rules of X-bar theory, erring on the side of false positives (read: _overgeneration_). This is a simple .txt file. Then, using NLTK's `parse.RecursiveDescentParser`, all legal interpretations of the sentence are made into trees and offered to the user. Note, we limit the specifier count to _, per Thai's syntactic restrictions (_citation_).
