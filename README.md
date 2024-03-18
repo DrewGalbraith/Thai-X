@@ -1,10 +1,8 @@
 # Thai Syntax Tree Parser
-A syntax tree parser for thai
-
-This tool takes in a sentence in Thai and builds all possible syntax trees for a user to see.
+TS-TP is a syntax tree parser for the [Thai language](https://en.wikipedia.org/wiki/Thai_language). It's goal is to take a sentence written in Thai and build/export all possible syntax trees for a user using X-Bar theory of syntax.
 
 There are 2 principle steps taking place here: 
-- Part-of-speech tagging and
+- Part-of-speech tagging,
 - Recursive desent parsing.
 
 ## Part-of-speech tagging
@@ -24,4 +22,4 @@ We use NLTK to build a Thai parser that operates on the principles of X-Bar theo
 
 ## Extra
 
-Using UTF-8 encoding will allow us to handle Thai orthography. A user will enter a Thai sentence and all parse trees possible under our rules will appear on the screen for them to select from. This will be coded in Python (and maybe some Latex) for easy accessibility.
+Using UTF-8 encoding will allow us to handle Thai characters.
