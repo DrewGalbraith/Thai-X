@@ -19,7 +19,7 @@ We use NLTK to build a Thai parser that operates on the principles of X-Bar theo
 - Are specifiers alway right next to the head in Thai, too?
 - Is there a limit to the number of legal adjuncts?
 - Depending on the above answers, how can we distinguish between the two, especially for the first appearance of both? Maybe rank them wiht a PCFG?
-- How do we make sure the right X' lines up with the right XP in a given phrase? A rule like `X= N|V|Adj|Adv|P|D` will destroy that.
+- How do we make sure the right X' lines up with the right XP in a given phrase? A rule like `X= N|V|Adj|Adv|P|D` will destroy that. Perhaps modifying [this file](https://github.com/nltk/nltk/blob/develop/nltk/parse/recursivedescent.py) from the [NLTK GitHub](https://github.com/nltk/nltk) will be a good place to start. This could even be an open source contribution!
 
 
 ## Extra
