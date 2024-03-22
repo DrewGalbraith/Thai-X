@@ -1,5 +1,5 @@
-# Thai Syntax Tree Parser
-TS-TP is a syntax tree parser for the [Thai language](https://en.wikipedia.org/wiki/Thai_language). It's goal is to take a sentence written in Thai and build/export all possible syntax trees for a user using X-Bar theory of syntax.
+# Thai-X 
+Thai-X is a [X-bar](https://en.wikipedia.org/wiki/X-bar_theory) syntax tree parser for the [Thai language](https://en.wikipedia.org/wiki/Thai_language). It's goal is to take a sentence written in Thai and build/export all possible syntax trees for a user using X-Bar theory of syntax.
 
 There are 2 principle steps taking place here: 
 - Part-of-speech tagging,
