@@ -3,7 +3,7 @@ Thai-X is a [X-bar](https://en.wikipedia.org/wiki/X-bar_theory) syntax tree pars
 
 There are 2 principle steps taking place here: 
 - Part-of-speech tagging,
-- Recursive desent parsing.
+- Recursive descent parsing.
 
 ## Part-of-speech tagging
 This tool uses the [pythainlp.parse](https://pythainlp.github.io/dev-docs/api/parse.html) library for word-based part-of-speech tagging. This tool goes a few steps beyond part-of-speech tagging. First, it handles the seperation of words for Thai text. Thai orthography, unlike English, does not split words based on spaces, instead using whitespace for sentential or phrasal functions. Many part-of-speech taggers (e.g., [pythainlp.tag](https://pythainlp.github.io/dev-docs/api/tag.html) require pre-split words, which is notoriously difficult for rule-based systems working with Khmer-derivative orthographies like Thai (see [here](http://www.thai-language.com/ref/breaking-words#:~:text=Because%20Thai%20doesn%27t%20use%20space%20between%20words%2C%20the%20task%20of%20automatically%20separating%20Thai%20text%20into%20words%20has%20been%20a%20long%2Dstanding%20challenge%20in%20the%20field%20of%20computational%20linguistics.)). The rise of neural tools has overcome this difficulty. Beyond word-splitting, this tool performs the tagging and syntactic relationship labeling for a given sentence. However, this operates under [Universal Dependency](https://universaldependencies.org/) (UD) theory of syntax, not a constituency theory such as X-bar. We will thus use the word-splitting and part-of-speech labeling funcitons, but use our own parser. 
