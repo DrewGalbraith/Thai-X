@@ -18,6 +18,5 @@ def dynamic_pos(text):
 
 sentence = "พี่น้องชาวบ้านกำลังเลี้ยงสตางค์ในสวน"
 
-
 # eg.
 # dynamic_pos(sentence)  # ['NOUN -> พี่น้อง | ชาวบ้าน | สตางค์ | สวน', 'AUX -> กำลัง', 'VERB -> เลี้ยง', 'ADP -> ใน']
