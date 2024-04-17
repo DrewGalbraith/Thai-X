@@ -15,7 +15,7 @@ print(thai_phrase_struct_rules)
 
 thai_cfg = CFG.fromstring(thai_phrase_struct_rules)
 
-sentence = input("\n\nEnter your Thai sentence here: ")
+sentence = input("\n\nEnter your Thai sentence here: ")  # e.g. "พี่น้องชาวบ้านกำลังเลี้ยงสตางค์ในสวน"
 new_cfg = dynamic_grammar_generator(sentence, thai_cfg, lang='th')
 
 RDA(grammar=new_cfg, sent=sentence).mainloop()  # un/comment to toggle visualization tool
