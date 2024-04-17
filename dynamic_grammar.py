@@ -1,18 +1,18 @@
 from pythainlp.parse import dependency_parsing
 from nltk import CFG
 
-def pos_tag(text, lang='th'):
-
+def pos_tag(text:str, lang:str='th')-> list[list[str]]:
 
     # Perform dependency parsing
     if lang == 'th':
-        parsing_results = dependency_parsing(text, tag="list")
+        parsing_results:list[list[str]] = dependency_parsing(text, tag="list")
     elif lang == 'en':
-        parsing_results = dependency_parsing(text, tag="list")
+        parsing_results:list[list[str]] = dependency_parsing(text, tag="list")
     else:
         raise ValueError("Language not supported ATM.")
     
     return parsing_results
+
     
 def dynamic_grammar_generator(sentence:str, cfg:CFG, lang:str='th'):
 
@@ -24,8 +24,8 @@ def dynamic_grammar_generator(sentence:str, cfg:CFG, lang:str='th'):
     pos_dict = {}
     for item in parsing_results:
         if item[3] not in pos_dict:
-            pos_dict[item[3]] = []
-        pos_dict[item[3]].append(item[2])
+            pos_dict[item[3]] = []  # Create key for PoS
+        pos_dict[item[3]].append(item[2])  # Append word to PoS' value list
 
     # Build strings for cfg
     append_to_cfg = []
@@ -34,5 +34,6 @@ def dynamic_grammar_generator(sentence:str, cfg:CFG, lang:str='th'):
 
     return append_to_cfg
 
-# eg.
-# dynamic_pos(sentence)  # ['NOUN -> พี่น้อง | ชาวบ้าน | สตางค์ | สวน', 'AUX -> กำลัง', 'VERB -> เลี้ยง', 'ADP -> ใน']
+# Example usage
+sentence = "พี่น้องชาวบ้านกำลังเลี้ยงสตางค์ในสวน"
+f= pos_tag(sentence)  # ['NOUN -> พี่น้อง | ชาวบ้าน | สตางค์ | สวน', 'AUX -> กำลัง', 'VERB -> เลี้ยง', 'ADP -> ใน']
