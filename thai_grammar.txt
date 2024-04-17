@@ -1,0 +1,51 @@
+CYP 	-> TP | DP | VP | VoiceP | AdjP | AspP | NP | AdvP | PP
+TYP 	-> CP  DP | VP | VoiceP | AdjP | AspP | NP | AdvP | PP
+DYP 	-> CP | TP | VP | VoiceP | AdjP | AspP | NP | AdvP | PP
+VYP 	-> CP | TP | DP | VoiceP | AdjP | AspP | NP | AdvP | PP
+VoiceYP 	-> CP | TP | DP | VP | AdjP | AspP | NP | AdvP | PP
+AdjYP 	-> CP | TP | DP | VP | VoiceP | AspP | NP | AdvP | PP
+AspYP 	-> CP | TP | DP | VP | VoiceP | AdjP | NP | AdvP | PP
+NYP 	-> CP | TP | DP | VP | VoiceP | AdjP | AspP | AdvP | PP
+AdvYP 	-> CP | TP | DP | VP | VoiceP | AdjP | AspP | NP | PP
+PYP 	-> CP | TP | DP | VP | VoiceP | AdjP | AspP | NP | AdvP 
+
+
+CP -> CYP C_bar
+C_bar -> C_bar | CYP C_bar | C_bar CYP
+C_bar -> C CYP
+
+TP -> TYP T_bar
+T_bar -> T_bar | TYP T_bar | T_bar TYP
+T_bar -> T TYP
+
+DP -> DYP D_bar
+D_bar -> D_bar | DYP D_bar | D_bar DYP
+D_bar -> D DYP
+
+NP -> NYP N_bar
+N_bar -> N_bar | NYP N_bar | N_bar NYP
+N_bar -> N NYP
+
+PP -> PYP P_bar
+P_bar -> P_bar | PYP P_bar | P_bar PYP
+P_bar -> P PYP
+
+AspP -> AspYP Asp_bar
+Asp_bar -> Asp_bar | AspYP Asp_bar | Asp_bar AspYP
+Asp_bar -> Asp AspYP
+
+VoiceP -> VoiceYP Voice_bar
+Voice_bar -> Voice_bar | VoiceYP Voice_bar | Voice_bar VoiceYP
+Voice_bar -> Voice VoiceYP
+
+VP -> VYP V_bar
+V_bar -> V_bar | VYP V_bar | V_bar VYP
+V_bar -> V VYP
+
+AdjP -> AdjYP Adj_bar
+Adj_bar -> Adj_bar | AdjYP Adj_bar | Adj_bar AdjYP
+Adj_bar -> Adj AdjYP
+
+AdvP -> AdvYP Adv_bar
+Adv_bar -> Adv_bar | AdvYP Adv_bar | Adv_bar AdvYP
+Adv_bar -> Adv AdvYP
