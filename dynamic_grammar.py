@@ -14,7 +14,7 @@ def pos_tag(text:str, lang:str='th')-> list[list[str]]:
     return parsing_results
 
     
-def dynamic_grammar_generator(sentence:str, cfg:CFG, lang:str='th')->CFG:
+def dynamic_grammar_generator(sentence:str, lang:str='th')->CFG:
 
 
     # Perform POS tagging
@@ -27,12 +27,13 @@ def dynamic_grammar_generator(sentence:str, cfg:CFG, lang:str='th')->CFG:
             pos_dict[item[3]] = []  # Create key for PoS
         pos_dict[item[3]].append(item[2])  # Append word to PoS' value list
 
-    # Build strings adn append to cfg
+    # Build strings and append to cfg
+    bottom_lvl_rules = ""
     for key, value in pos_dict.items():
-        cfg += f"{key} -> {' | '.join(value)}\n"
+        bottom_lvl_rules += f'''\n{key} -> "{'" | "'.join(value)}"'''
 
-    return cfg
+    return bottom_lvl_rules
 
 # Example usage
-sentence = "พี่น้องชาวบ้านกำลังเลี้ยงสตางค์ในสวน"
-f= pos_tag(sentence)  # ['NOUN -> พี่น้อง | ชาวบ้าน | สตางค์ | สวน', 'AUX -> กำลัง', 'VERB -> เลี้ยง', 'ADP -> ใน']
+# sentence = "พี่น้องชาวบ้านกำลังเลี้ยงสตางค์ในสวน"
+# f= pos_tag(sentence)  # ['NOUN -> พี่น้อง | ชาวบ้าน | สตางค์ | สวน', 'AUX -> กำลัง', 'VERB -> เลี้ยง', 'ADP -> ใน']
