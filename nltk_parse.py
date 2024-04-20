@@ -19,4 +19,4 @@ wd_rules = dynamic_grammar_generator(sentence, lang='th')
 
 thai_cfg = CFG.fromstring(thai_phrase_struct_rules + wd_rules)
 
-RDA(grammar=new_cfg, sent=sentence).mainloop()  # un/comment to toggle visualization tool
+RDA(grammar=thai_cfg, sent=sentence).mainloop()  # un/comment to toggle visualization tool
